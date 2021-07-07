@@ -31,4 +31,17 @@ public int getContact()
 {
         return contact;
 }
+        
+private List <Doctor> doctor;
+public List <Doctor> getDoctor()
+{
+        return doctor;
+} 
+
+public Patient(String firstName, List <Doctor> doctor)
+{
+        this.firstName=firstName;
+        this.doctor=doctor;
+}
+        
 }
