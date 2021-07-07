@@ -1,20 +1,28 @@
-class Appointment {
-private Log log;
-private Patient patient;
-private Doctor doc;
-private String date;
-private float additionalFee;
+class PostAppointment extends Appointment{
 
-public Appointment();
-public Appointment(Log log, Doctor doc, String date, float additionalFee) {
-}
-public void addLog(Log log) {
-}
-public void register(Patient patient) {
+private double discount;
 
+public PostAppointment(Patient patient, String date, String time) {
+	super(patient,date, time);
+	getDiscount();
+	calculateCharge();
 }
 
-public abstract void toString();
-public abstract void calculateCharge();
+public void getDiscount() {
+	discount = followUpCharge * (followUpDiscountPerVisit * patient.getVisitCount());
+	
+}
+
+public void displayAppointment() {
+	patient.displayInfo();
+	(patient.getDoctor()).displayInfo();
+        System.out.printf("Total price: RM%.2f\n", followUpCharge);
+        System.out.printf("Discount: RM%.2f\n", discount);
+        System.out.printf("Price after discount: RM%.2f", totalCharge);
+}
+
+public void calculateCharge() {
+	totalCharge = followUpCharge - discount;
+}
 
 }
