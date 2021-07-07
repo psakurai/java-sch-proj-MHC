@@ -1,4 +1,4 @@
-class Appointment {
+class Appointment implements Deposit{
 private Log log;
 private Patient patient;
 private Doctor doc;
@@ -17,4 +17,16 @@ public void register(Patient patient) {
 public abstract void toString();
 public abstract void calculateCharge();
 
+public double getPayment()
+{
+    if (firstTimeUser)
+    {
+        return Deposit.firstCharge;
+    }
+    else
+    {
+        return Deposit.firstCharge+Deposit.followUpCharge;
+    }
+}
+  
 }
