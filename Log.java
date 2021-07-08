@@ -11,7 +11,6 @@ public Log()
 public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
 }
-
 public void displayList() {
 	
 	System.out.println("--List of appointments--");
@@ -27,6 +26,7 @@ public void displayList() {
 public void displayAppointmentDetails(int choice) {
 	System.out.println("Here is the details for Appointment " + (choice));
 	appointments.get(choice-1).displayAppointment();
+
 }
 
 

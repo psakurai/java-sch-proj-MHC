@@ -23,7 +23,7 @@ public static void  displayMenu() {
 }
 public static void subMenu1() {
         System.out.println("===================================");
-        System.out.println("|             Add Data            |");
+        System.out.println("|   Mental Health Consultation    |");
         System.out.println("===================================");
         System.out.println("| Options:                        |");
         System.out.println("|        1. Add Appointment             |");
@@ -175,6 +175,29 @@ public static void subMenu2() {
         System.out.print("Select Option: ");
 }
 
+=======
+public static void subMenu1a() {
+        System.out.println("===================================");
+        System.out.println("|   Mental Health Consultation    |");
+        System.out.println("===================================");
+        System.out.println("| Options:                        |");
+        System.out.println("|        1. preAppointment             |");
+        System.out.println("|        2. postAppointment           |");
+        System.out.println("|        3. Back               |");
+        System.out.println("===================================");
+        System.out.print("Select Option: ");
+}
+public static void subMenu2() {
+        System.out.println("===================================");
+        System.out.println("|   Mental Health Consultation    |");
+        System.out.println("===================================");
+        System.out.println("| Options:                        |");
+        System.out.println("|        1. Cancel Appointment             |");
+        System.out.println("|        2. Delete Doctor           |");
+        System.out.println("|        3. Back                 |");
+        System.out.println("===================================");
+        System.out.print("Select Option: ");
+}
 public static void subMenu3() {
         System.out.println("===================================");
         System.out.println("|   Mental Health Consultation    |");

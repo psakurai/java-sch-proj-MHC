@@ -25,4 +25,16 @@ public void calculateCharge() {
 	totalCharge = followUpCharge - discount;
 }
 
+public double getPayment()
+{
+    if (firstTimeUser)
+    {
+        return Deposit.firstCharge;
+    }
+    else
+    {
+        return Deposit.firstCharge+Deposit.followUpCharge;
+    }
+}
+  
 }
