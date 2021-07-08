@@ -1,40 +1,34 @@
-class PostAppointment extends Appointment{
-
-private double discount;
-
-public PostAppointment(Patient patient, String date, String time) {
-	super(patient,date, time);
-	getDiscount();
-	calculateCharge();
-}
-
-public void getDiscount() {
-	discount = followUpCharge * (followUpDiscountPerVisit * patient.getVisitCount());
+abstract class Appointment implements Deposit{
+	protected Patient patient;
+	protected String date;
+	protected String time;
+	protected double totalCharge;
 	
-}
+	public Appointment(Patient patient, String date, String time) {
+		this.patient = patient;
+		this.date = date;
+		this.time = time;
+	}
+	
+	public Patient getPatient() {
+		return patient; }
+	
+	public String getDate() {
+		return date; }
 
-public void displayAppointment() {
-	patient.displayInfo();
-	(patient.getDoctor()).displayInfo();
-        System.out.printf("Total price: RM%.2f\n", followUpCharge);
-        System.out.printf("Discount: RM%.2f\n", discount);
-        System.out.printf("Price after discount: RM%.2f", totalCharge);
-}
+	public String getTime()
+	{
+		return time;
+	} 
+	
+	public void displayAppointment() {
+		System.out.println("\n--Appointment details--");
+		System.out.println("Patient's name   : " + patient.getName());
+        System.out.println("Doctor in charge : " + patient.getDoctor().getName());
+		System.out.println("Date             : " + date);
+		System.out.println("Time             : " + time);
+	}
 
-public void calculateCharge() {
-	totalCharge = followUpCharge - discount;
-}
-
-public double getPayment()
-{
-    if (firstTimeUser)
-    {
-        return Deposit.firstCharge;
-    }
-    else
-    {
-        return Deposit.firstCharge+Deposit.followUpCharge;
-    }
-}
-  
+	public abstract void calculateCharge();
+	
 }

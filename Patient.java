@@ -9,6 +9,8 @@ class Patient {
         private int age;
 	private int visitCount;
        
+        
+
         public Patient(String firstName, String lastName, String IC, String address, String contact, String gender, int age, Doctor doctor)
         {
                 this.firstName = firstName;
@@ -21,6 +23,7 @@ class Patient {
 		this.doctor = doctor;
                 visitCount = 1;
         }
+
         public String getName()
         {
                 return firstName + " " + lastName;
@@ -71,3 +74,4 @@ class Patient {
                 System.out.println("Gender: " + gender);
         }
 
+}
