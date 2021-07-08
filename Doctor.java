@@ -1,22 +1,32 @@
 class Doctor {
 private String doctorName;
-private int contact;
+private String contact;
 private String department;
 
-public Doctor(String doctorName, int contact, String department)
-{
-    this.doctorName=doctorName;
-    this.contact=contact;
-    this.department=department;
-}
+public Doctor(String doctorName, String contact, String department) {
+	this.doctorName = doctorName;
+	this.contact = contact;
+	this.department = department;
+	}
 
+public String getName() {
+	return doctorName;
+	}
 
-public void display() 
-{
-    System.out.println("***************DOCTOR's DETAILS***************");
-    System.out.println("Name: " + doctorName);
-    System.out.println("Contact: " + contact);
-    System.out.println("Department: " + department);
-}
+public String getContact() {
+		return contact;
+	}
+
+public String getDepartment() {
+		return department;
+	}
+	
+public void displayInfo() {
+	System.out.println("\n--Doctor Details--\n");
+	System.out.println("Name: " + doctorName);
+	System.out.println("Contact Number: " + contact);
+	System.out.println("Department: " + department);
+
+	}
 }
 

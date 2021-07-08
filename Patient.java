@@ -1,62 +1,73 @@
 class Patient {
-private String firstName;
-private String lastName;
-private String IC;
-private String address;
-private int contact;
-private int age;
-private String gender;
-private boolean firstTimeUser;
+	private Doctor doctor;
+        private String firstName;
+        private String lastName;
+        private String IC;
+        private String address;
+        private String contact;
+	private String gender;
+        private int age;
+	private int visitCount;
+       
+        public Patient(String firstName, String lastName, String IC, String address, String contact, String gender, int age, Doctor doctor)
+        {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.IC = IC;
+                this.address = address;
+                this.contact = contact;
+                this.gender = gender;
+		this.age = age;
+		this.doctor = doctor;
+                visitCount = 1;
+        }
+        public String getName()
+        {
+                return firstName + " " + lastName;
+        }
 
-public Patient(String firstName, String lastName, String address, int contact, int age, String gender, boolean firstTimeUser)
-{
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.IC = IC;
-        this.address = address;
-        this.contact = contact;
-        this.gender = gender;
-        this.firstTimeUser = firstTimeUser;
-}
+        public int getAge()
+        {
+                return age;
+        }
 
-public String getName()
-{
-        return firstName + " " + lastName;
-}
+        public String getIC()
+        {
+                return IC;
+        }
 
-public int getAge()
-{
-        return age;
-}
+        public String getAddress()
+        {
+                return address;
+        }
 
-public String getIC()
-{
-        return IC;
-}
+        public String getContact()
+        {
+                return contact;
+        }
 
-public String getAddress()
-{
-        return address;
-}
+        public int getVisitCount()
+        {
+                return visitCount;
+        }
 
-public int getContact()
-{
-        return contact;
-}
+	 public void updateVisitCount()
+        {
+                visitCount++;
+        }
 
-public boolean isFirst()
-{
-        return firstTimeUser;
-}
+	public Doctor getDoctor() {
+		return doctor;
+	}
 
-public void displayInfo()
-{
-        System.out.println("Patient's name: " + getName());
-        System.out.println("Patient's age: " + age);
-        System.out.println("Patient's IC: " + IC);
-        System.out.println("Patient's address: " + address);
-        System.out.println("Patient's contact: " + contact);
-        System.out.println("Patient's gender: " + gender);
-}
+        public void displayInfo()
+        {
+		System.out.println("\n--Patient Details--\n");
+                System.out.println("Name: " + getName());
+                System.out.println("Age: " + age);
+                System.out.println("IC Number: " + IC);
+                System.out.println("Address: " + address);
+                System.out.println("Contact: " + contact);
+                System.out.println("Gender: " + gender);
+        }
 
-}
